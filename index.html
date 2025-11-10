@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <title>แบบบันทึกขอรับการสนับสนุนทุน</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="header-title">แบบบันทึกขอรับการสนับสนุนทุน</div>
+        </header>
+        <div class="form-content-info">
+            <label>ชื่อ-นามสกุล: <input type="text" id="name"></label>
+            <label>คณะมนุษยศาสตร์ ภาควิชา:
+              <select id="dropdown1">
+                <option value="">-- ภาควิชา --</option>
+                <option value="05">ภาควิชาดนตรี</option>
+                <option value="07">ภาควิชาภาษาไทย</option>
+                <option value="06">ภาควิชาภาษาอังกฤษ</option>
+                <option value="02">ภาควิชาภาษาตะวันตก</option>
+                <option value="08">ภาควิชาศิลปะการแสดง</option>
+                <option value="03">ภาควิชาภาษาตะวันออก</option>
+                <option value="04">ภาควิชาภาษาศาสตร์ คติชนวิทยา ปรัชญาและศาสนา</option>
+                <option value="01">สำนักงานเลขานุการคณะฯ</option>
+              </select>
+            </label>
+            <label>เบอร์โทร: <input type="tel"></label>
+            <label>ที่ อว 0603.03.
+              <select id="dropdown2">
+                <option value="">-- เลือก --</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="01(....)">01(....)</option>
+              </select>
+            </label>
+            <label>วันที่ <input type="date" id="dateInput"></label>
+        </div>
+        <div class="form-content-data">
+             <h3 class="green">ข้อมูลบทความที่ได้รับตีพิมพ์</h3>
+
+            <div class="section">
+              <label>ชื่อบทความที่ได้รับตีพิมพ์: <input type="text" id="title"></label>
+              <label>ประเภทบทความ:
+                <select id="dropdown3">
+                  <option>บทความวิจัย</option>
+                  <option>บทความวิจัยสร้างสรรค์</option>
+                </select>
+              </label>
+              <label>ชื่อวารสาร: <input type="text" id="journal"></label>
+              <label>วันที่เผยแพร่: <input type="date" id="pubDate"></label>
+              <label>หน้าที่ตีพิมพ์: <input type="text" id="pages"></label>
+              <label>ฐานข้อมูล:
+                <select id="dropdown4">
+                  <option>วารสารระดับชาติ (TCI กลุ่ม 1)</option>
+                  <option>วารสารระดับนานาชาติ (Quartile 1)</option>
+                  <option>วารสารระดับนานาชาติ (Quartile 2)</option>
+                  <option>วารสารระดับนานาชาติ (Quartile 3)</option>
+                  <option>วารสารระดับนานาชาติ (Quartile 4)</option>
+                  <option>วารสารระดับนานาชาติ (อยู่ในฐานข้อมูลที่ กพอ.ยอมรับ (โปรดระบุชื่อฐานข้อมูล))</option>
+                </select>
+              </label>
+              <label>โครงการวิจัยจาก:
+                <select id="dropdown5">
+                  <option>คณะมนุษยศาสตร์ มหาวิทยาลัยนเรศวร โดยใช้งบประมาณส่วนตัวเพื่อกำหนดภาระงาน</option>
+                  <option>งบประมาณรายได้มหาวิทยาลัยนเรศวร ปีงบประมาณ ..................</option>
+                  <option>แหล่งทุนวิจัยภายนอก (โปรดระบุรายชื่อแหล่งทุน และปีงบประมาณที่ได้รับทุน)</option>
+                  <option>งบประมาณรายได้ คณะมนุษยศาสตร์ มหาวิทยาลัยนเรศวร ปีงบประมาณ (โปรดระบุปีที่ได้รับทุน ก่อนปีงบประมาณ 2568)</option>
+                </select>
+              </label>
+              <label>โครงการวิจัยเรื่อง: <input type="text" id="project"></label>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
