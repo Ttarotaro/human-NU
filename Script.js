@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const dateInput = document.getElementById("dateInput"); // วันที่
   const nameInput = document.getElementById("name"); // ชื่อ-นามสกุล
   const text1Input = document.getElementById("text1"); // ข้าพเจ้า (ในใบรับเงิน)
-  const dropdown6 = document.getElementById("dropdown6"); // ประเภททุน
-  const text3Input = document.getElementById("text3"); // จำนวนเงินต่อหน่วย
+  const dropdown7 = document.getElementById("dropdown7"); // จำนวนเงินหน่วยละ
   const text3Total = document.getElementById("text3_total"); // รวมเป็นเงิน
 
   // ตั้งค่าวันที่ปัจจุบัน
@@ -51,13 +50,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // เมื่อเลือกประเภททุน ให้แสดงจำนวนเงิน
-  if (dropdown6 && text3Input && text3Total) {
-    dropdown6.addEventListener("change", function() {
-      const selectedValue = dropdown6.value;
+  // เมื่อเลือกจำนวนเงินจาก dropdown7 ให้แสดงในช่อง "รวมเป็นเงิน"
+  if (dropdown7 && text3Total) {
+    dropdown7.addEventListener("change", function() {
+      const selectedValue = dropdown7.value;
       let amount = "";
 
-      // แปลง value เป็นจำนวนเงิน
+      // แปลงเป็นรูปแบบที่มีคอมม่า
       switch(selectedValue) {
         case "2000":
           amount = "2,000";
@@ -71,9 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
         case "7000":
           amount = "7,000";
           break;
-        case "7000_other":
-          amount = "7,000";
-          break;
         case "10000":
           amount = "10,000";
           break;
@@ -81,8 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
           amount = "";
       }
 
-      text3Input.value = amount;
-      text3Total.value = amount; // รวมเป็นเงินเท่ากับหน่วยละ (เพราะมี 1 หน่วย)
+      text3Total.value = amount;
     });
   }
 });
