@@ -78,6 +78,75 @@
               <label>โครงการวิจัยเรื่อง: <input type="text" id="project"></label>
             </div>
         </div>
+        <div class="form-content-receipt">
+            <h3 class="green">ใบสำคัญรับเงิน</h3>
+            
+            <div class="receipt-row">
+                <label class="receipt-label">ข้าพเจ้า: 
+                    <input type="text" id="text1" class="receipt-input-medium" readonly>
+                </label>
+                <label class="receipt-label">ที่อยู่: 
+                    <input type="text" id="address" class="receipt-input-long">
+                </label>
+            </div>
+
+            <div class="receipt-row">
+                <label class="receipt-label">ตำบล: 
+                    <input type="text" id="district" class="receipt-input-medium">
+                </label>
+                <label class="receipt-label">อำเภอ: 
+                    <input type="text" id="amphoe" class="receipt-input-medium">
+                </label>
+            </div>
+
+            <div class="receipt-row">
+                <label class="receipt-label">จังหวัด: 
+                    <input type="text" id="province" class="receipt-input-medium">
+                </label>
+                <label class="receipt-label-inline">ได้รับเงินจากมหาวิทยาลัยนเรศวร ดังมีรายการดังต่อไปนี้</label>
+            </div>
+
+            <div class="receipt-section">
+                <label class="receipt-label-full">1. ทุนสนับสนุนค่าบทความวิจัย
+                    <span class="right-align">จำนวน 1 หน่วย</span>
+                </label>
+                
+                <div class="amount-row">
+                    <select id="dropdown6" class="receipt-dropdown">
+                        <option value="">-- เลือกประเภททุน --</option>
+                        <option value>ค่าแปลบทความที่ได้รับการตีพิมพ์ในวารสารระดับนานาชาติที่ปรากฏในฐานข้อมูลการจัดอันดับวารสาร SJR/ฐานข้อมูล ISI/Scopus หรือวารสารวิชาการเป็นที่ยอมรับตามประกาศ ก.พ.อ. และเป็นภาษาที่ไม่ตรงกับความเชี่ยวชาญของผู้ขอรับทุน  </option>
+                        <option value>ค่าตรวจสอบภาษาบทความที่ได้รับการตีพิมพ์ในวารสารระดับนานาชาติที่ปรากฏในฐานข้อมูลการจัดอันดับวารสาร SJR/ฐานข้อมูล ISI/Scopus หรือวารสารวิชาการเป็นที่ยอมรับตามประกาศ ก.พ.อ. และเป็นภาษาที่ตรงกับความเชี่ยวชาญของผู้ขอรับทุน </option>
+                        <option value>เงินรางวัลตีพิมพ์สำหรับผลงานที่ได้รับการตีพิมพ์ในวารสารระดับชาติ ฐานข้อมูล Thai-Journal Citation Index (TCI) กลุ่ม 1</option>
+                        <option value>เงินรางวัลตีพิมพ์สำหรับผลงานที่ได้รับการตีพิมพ์ในวารสารระดับชาติ ฐานข้อมูล Thai-Journal Citation Index (TCI) กลุ่ม 1 และทุนสนับสนุนค่าใช้จ่ายการตีพิมพ์</option>
+                        <option value>เงินรางวัลสมทบสำหรับผลงานที่ได้รับการตีพิมพ์ในวารสารระดับนานาชาติที่ปรากฏในฐานข้อมูลของการจัดอันดับวารสาร SCImago Journal Rank (SJR) หรือ ฐานข้อมูล ISI Web of Science, Scopus มีค่า Quartile 1</option>
+                        <option value>เงินรางวัลสมทบสำหรับผลงานที่ได้รับการตีพิมพ์ในวารสารระดับนานาชาติที่ปรากฏในฐานข้อมูลของการจัดอันดับวารสาร SCImago Journal Rank (SJR) หรือ ฐานข้อมูล ISI Web of Science, Scopus มีค่า Quartile 2</option>
+                        <option value>เงินรางวัลสมทบสำหรับผลงานที่ได้รับการตีพิมพ์ในวารสารระดับนานาชาติที่ปรากฏในฐานข้อมูลของการจัดอันดับวารสาร SCImago Journal Rank (SJR) หรือ ฐานข้อมูล ISI Web of Science, Scopus มีค่า Quartile 3-4 </option>
+                        <option value>เงินรางวัลสำหรับผลงานที่ได้รับการตีพิมพ์ในวารสารระดับนานาชาติที่ปรากฏในฐานข้อมูลของการจัดอันดับวารสาร SJR หรือ ฐานข้อมูล ISI มีค่า Quartile 3-4  และเงินรางวัลสมทบ </option>
+                        <option value>เงินรางวัลตีพิมพ์สำหรับผลงานที่ได้รับการตีพิมพ์ในวารสารระดับนานาชาติที่ไม่ปรากฏในฐานข้อมูลของการจัดอันดับวารสาร SJR / ฐานข้อมูล ISI แต่ปรากฏในฐานข้อมูล Scopus หรือ วารสารวิชาการที่ ก.พ.อ. ให้การยอมรับ </option>
+                        <option value>เงินรางวัลสำหรับผลงานที่ได้รับการตีพิมพ์ในวารสารระดับนานาชาติที่ปรากฏในฐานข้อมูลของการจัดอันดับวารสาร SJR หรือ ฐานข้อมูล ISI มีค่า Quartile 3-4 </option>
+                    </select>
+                    
+                    <div class="amount-display">
+                        <label>หน่วยละ:
+                          <select id="dropdown7">
+                            <option>2,000</option>
+                            <option>3,000</option>
+                            <option>4,000</option>
+                            <option>5,000</option>
+                          </select>
+                        </label>
+                        <span>บาท</span>
+                    </div>
+                </div>
+
+                <div class="total-row">
+                    <span>รวมเป็นเงิน </span>
+                    <input type="text" id="text3_total" class="amount-input" readonly>
+                    <span>บาท</span>
+                </div>
+            </div>
+        </div>
+
 
         <script src="script.js"></script>
     </body>
