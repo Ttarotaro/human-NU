@@ -148,8 +148,255 @@
                 </div>
             </div>
         </div>
+        
+ <!-- ตารางแบบตรวจสอบความครบถ้วน -->
+<title>แบบตรวจสอบความครบถ้วน</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        <div class="container">
+        body {
+            font-family: 'Sarabun', 'Segoe UI', Tahoma, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .section-title {
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            margin: 20px 0 15px 0;
+            font-weight: bold;
+            border-left: 4px solid #979797;
+            color: #333;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 0 20px 0;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            table-layout: fixed;
+        }
+
+        /* Header Styles */
+        thead th {
+            text-align: center;
+            padding: 15px;
+            background-color: #979797;
+            color: rgb(255, 255, 255);
+            border: none;
+            font-weight: 300;
+            font-size: 14px;
+            word-wrap: break-word;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            max-width: 0;
+        }
+
+        /* Body Styles */
+        tbody td {
+            padding: 12px 15px;
+            border: 1px solid #dee2e6;
+            vertical-align: middle;
+            word-wrap: break-word;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            max-width: 0;
+            font-size: 14px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        /* Checkbox Cell */
+        .checkbox-col,
+        .checkbox-cell {
+            width: 60px;
+            min-width: 60px;
+            max-width: 60px;
+            text-align: center;
+            vertical-align: middle;
+            padding: 12px 5px;
+        }
+
+        /* Checkbox Styles */
+        .checkbox-col input[type="checkbox"],
+        .checkbox-cell input[type="checkbox"] {
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            margin: 0 auto;
+            display: inline-block;
+            vertical-align: middle;
+            border: 2px solid #acacac;
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .checkbox-col input[type="checkbox"]:hover,
+        .checkbox-cell input[type="checkbox"]:hover {
+            border-color: #acacac;
+            transform: scale(1.00);
+        }
+
+        .checkbox-col input[type="checkbox"]:checked,
+        .checkbox-cell input[type="checkbox"]:checked {
+            background: #acacac;
+            border-color: #acacac;
+            box-shadow: 0 3px 8px rgba(255, 255, 255, 0.4);
+        }
+
+        .checkbox-col input[type="checkbox"]:checked::after,
+        .checkbox-cell input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Row Hover Effect */
+        tbody tr:hover {
+            background-color: #685dff47;
+            transition: background-color 0.3s ease;
+        }
+
+        tbody tr {
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:active {
+            background-color: #d1e7ff;
+        }
+
+        .indent-1 {
+            margin-left: 20px;
+            display: block;
+        }
+
+        /* Media Query สำหรับแท็บเล็ต */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            table {
+                font-size: 14px;
+            }
+            
+            thead th {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            tbody td {
+                padding: 8px 10px;
+                font-size: 13px;
+            }
+            
+            .checkbox-col,
+            .checkbox-cell {
+                width: 50px;
+                min-width: 50px;
+                max-width: 50px;
+            }
+            
+            .checkbox-col input[type="checkbox"],
+            .checkbox-cell input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        /* Media Query สำหรับมือถือขนาดเล็ก */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 18px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            thead th {
+                padding: 8px;
+                font-size: 13px;
+                line-height: 1.4;
+            }
+            
+            tbody td {
+                padding: 6px 8px;
+                font-size: 12px;
+                line-height: 1.5;
+            }
+            
+            .checkbox-col,
+            .checkbox-cell {
+                width: 45px;
+                min-width: 45px;
+                max-width: 45px;
+                padding: 6px 3px;
+            }
+            
+            .checkbox-col input[type="checkbox"],
+            .checkbox-cell input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
         <h2>แบบตรวจสอบความครบถ้วน</h2>
         
         <div class="section-title">
@@ -220,13 +467,14 @@
                     <td class="checkbox-col"><input type="checkbox" id="box2.4"></td>
                     <td>4. หลักฐานการตรวจสอบข้อมูลวารสาร (รับรองสำเนาถูกต้อง)</td>
                 </tr>
-                <tr>
+            </tbody>
             <thead>
                 <tr>
                     <th class="checkbox-col"> </th>
                     <th>เอกสารเพิ่มเติมกรณีขอค่าตีพิมพ์บทความ</th>
                 </tr>
             </thead>
+            <tbody>
                 <tr>
                     <td class="checkbox-col"><input type="checkbox" id="box3.1"></td>
                     <td>- Invoice หรือหลักฐานแสดงค่าตีพิมพ์ที่วารสารเรียกเก็บ </td>
@@ -235,14 +483,15 @@
                     <td class="checkbox-col"><input type="checkbox" id="box3.2"></td>
                     <td>- Receipt หรือหลักฐานแสดงการจ่ายค่าตีพิมพ์ที่ระบุทั้งค่าตีพิมพ์สกุลเงินที่วารสารเรียกเก็บและสกุลเงินไทย </td>
                 </tr>
-                </tr>
+            </tbody>
             <thead>
                 <tr>
                     <th class="checkbox-col"> </th>
                     <th>เอกสารเพิ่มกรณีขอค่าแปลหรือค่าตรวจสอบภาษา</th>
                 </tr>
             </thead>
-                    <tr>
+            <tbody>
+                <tr>
                     <td class="checkbox-col"><input type="checkbox" id="box4.1"></td>
                     <td>- บันทึกอนุมัติในหลักการให้ดำเนินการจ้างแปลหรือตรวจสอบภาษา (แนบบทความก่อนจ้างแปลหรือตรวจสอบภาษา ประวัติผู้แปลหรือตรวจสอบภาษา และรายละเอียดวารสารที่จะลงตีพิมพ์) </td>
                 </tr>
@@ -250,22 +499,26 @@
                     <td class="checkbox-col"><input type="checkbox" id="box4.2"></td>
                     <td>- ใบเสร็จค่าจ้างแปลหรือจ้างตรวจสอบภาษา (กรณีไม่ใช่ใบเสร็จ ให้ใช้ใบสำคัญรับเงินและสำเนาบัตรประชาชนผู้รับจ้าง) </td>
                 </tr>
+            </tbody>
             <thead>
                 <tr>
                     <th class="checkbox-col"> </th>
                     <th>เอกสารเพิ่มเติมกรณีขอเงินรางวัลสมทบ</th>
                 </tr>
             </thead>
+            <tbody>
                 <tr>
                     <td class="checkbox-col"><input type="checkbox" id="box5.1"></td>
                     <td>- สำเนาเอกสารผลการพิจารณาการได้รับทุนสนับสนุนค่าตีพิมพ์ของมหาวิทยาลัย (บันทึกขอรับเงินรางวัลที่ได้รับการอนุมัติจากมหาวิทยาลัย)  </td>
                 </tr>
+            </tbody>
             <thead>
                 <tr>
                     <th class="checkbox-col"> </th>
                     <th>เอกสารเพิ่มเติมกรณีผลงานที่อยู่ใน Quartile 3 – 4 ไม่ได้รับการสนับสนุนจากมหาวิทยาลัยเนื่องจากกรอบงบประมาณของมหาวิทยาลัยจำกัด</th>
                 </tr>
             </thead>
+            <tbody>
                 <tr>
                     <td class="checkbox-col"><input type="checkbox" id="box6.1"></td>
                     <td>- บันทึกแจ้งจากมหาวิทยาลัย หรือหลักฐานแสดงการไม่ได้รับอนุมัติทุน </td>
@@ -273,6 +526,8 @@
             </tbody>
         </table>
     </div>
+
+
         <script src="script.js"></script>
     </body>
 </html>
