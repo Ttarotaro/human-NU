@@ -179,47 +179,90 @@ h3.green {
 }
 
 .container h2 {
-    color: #2c5f2d;
+    color: #010b4d;
     margin-bottom: 20px;
     font-size: 22px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
+
 
 .section-title {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 15px;
     color: #333;
 }
 
+/* Table Styles */
 table {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 0 20px 0;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    table-layout: fixed;
 }
 
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    vertical-align: top;
+/* Header Styles */
+thead th {
+    text-align: center;
+    padding: 15px;
+    background-color: #5842ac;
+    color: white;
+    border: 1px solid #dee2e6;
+    font-weight: bold;
+    font-size: 16px;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 0;
+}
+
+/* Body Styles */
+tbody td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    vertical-align: middle;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 0;
     font-size: 14px;
 }
 
-table th {
-    background-color: #f0f0f0;
-    text-align: center;
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
 }
 
-.checkbox-col {
-    width: 40px;
+/* Checkbox Cell - ปุ่มอยู่กลางช่อง */
+.checkbox-col,
+.checkbox-cell {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
     text-align: center;
+    vertical-align: middle;
+    padding: 12px 5px;
 }
 
-input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+.checkbox-col input[type="checkbox"],
+.checkbox-cell input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
     cursor: pointer;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Row Hover Effect */
+tbody tr:hover {
+    background-color: #2415fc47;
+    transition: background-color 0.3s ease;
 }
 
 .indent-1 {
@@ -227,32 +270,97 @@ input[type="checkbox"] {
     display: block;
 }
 
-table tbody tr:nth-child(even) {
-    background-color: #fafafa;
+/* Media Query สำหรับแท็บเล็ต */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        font-size: 20px;
+        padding: 15px;
+    }
+    
+    .form-content-info,
+    .form-content-data,
+    .form-content-receipt,
+    .container {
+        padding: 20px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    thead th {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    tbody td {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    
+    .checkbox-col,
+    .checkbox-cell {
+        width: 50px;
+        min-width: 50px;
+        max-width: 50px;
+    }
+    
+    .checkbox-col input[type="checkbox"],
+    .checkbox-cell input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
 }
 
-/* Responsive สำหรับมือถือ */
-@media (max-width: 768px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
+/* Media Query สำหรับมือถือขนาดเล็ก */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 5px;
     }
-    thead tr {
-        display: none;
+    
+    header {
+        font-size: 18px;
+        padding: 12px;
     }
-    tr {
-        margin-bottom: 15px;
+    
+    .form-content-info,
+    .form-content-data,
+    .form-content-receipt,
+    .container {
+        padding: 15px;
     }
-    td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
+    
+    table {
+        font-size: 12px;
     }
-    td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        width: 45%;
-        text-align: left;
-        font-weight: 500;
+    
+    thead th {
+        padding: 8px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    tbody td {
+        padding: 6px 8px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    
+    .checkbox-col,
+    .checkbox-cell {
+        width: 45px;
+        min-width: 45px;
+        max-width: 45px;
+        padding: 6px 3px;
+    }
+    
+    .checkbox-col input[type="checkbox"],
+    .checkbox-cell input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
     }
 }
