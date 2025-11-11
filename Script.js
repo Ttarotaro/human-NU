@@ -80,4 +80,20 @@ document.addEventListener("DOMContentLoaded", function() {
       text3Total.value = amount;
     });
   }
+    const rows = document.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        row.addEventListener('click', function(e) {
+            // ถ้าคลิกที่ checkbox เอง ให้ทำงานปกติ
+            if (e.target.type === 'checkbox') return;
+            
+            // หา checkbox ในแถวนั้น
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked;
+            }
+        });
+        
+        // เปลี่ยน cursor ให้เป็น pointer
+        row.style.cursor = 'pointer';
+    });
 });

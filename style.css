@@ -195,6 +195,7 @@ h3.green {
 }
 
 /* Table Styles */
+/* Table Styles */
 table {
     width: 100%;
     max-width: 1200px;
@@ -209,11 +210,11 @@ table {
 thead th {
     text-align: center;
     padding: 15px;
-    background-color: #5842ac;
-    color: white;
-    border: 1px solid #dee2e6;
-    font-weight: bold;
-    font-size: 16px;
+    background-color: #979797;
+    color: rgb(255, 255, 255);
+    border: none; /* ลบเส้นขอบออก */
+    font-weight: 300;
+    font-size: 14px;
     word-wrap: break-word;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -249,20 +250,63 @@ tbody tr:nth-child(even) {
     padding: 12px 5px;
 }
 
+/* Checkbox Styles - สไตล์ Modern สีเทาอ่อน */
 .checkbox-col input[type="checkbox"],
 .checkbox-cell input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+    appearance: none;
+    width: 22px;
+    height: 22px;
     cursor: pointer;
     margin: 0 auto;
     display: inline-block;
     vertical-align: middle;
+    border: 2px solid #acacac;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.checkbox-col input[type="checkbox"]:hover,
+.checkbox-cell input[type="checkbox"]:hover {
+    border-color: #acacac;
+    transform: scale(1.00);
+}
+
+.checkbox-col input[type="checkbox"]:checked,
+.checkbox-cell input[type="checkbox"]:checked {
+    background: #acacac;
+    border-color: #acacac;
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.4);
+}
+
+.checkbox-col input[type="checkbox"]:checked::after,
+.checkbox-cell input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Row Hover Effect */
 tbody tr:hover {
-    background-color: #2415fc47;
+    background-color: #685dff47;
     transition: background-color 0.3s ease;
+}
+
+/* ทำให้แถวดูคลิกได้ชัดเจนขึ้น */
+tbody tr {
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:active {
+    background-color: #d1e7ff;
 }
 
 .indent-1 {
@@ -311,8 +355,8 @@ tbody tr:hover {
     
     .checkbox-col input[type="checkbox"],
     .checkbox-cell input[type="checkbox"] {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -360,7 +404,17 @@ tbody tr:hover {
     
     .checkbox-col input[type="checkbox"],
     .checkbox-cell input[type="checkbox"] {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
     }
+}
+/* ทำให้แถวดูคลิกได้ชัดเจนขึ้น */
+tbody tr {
+    cursor: pointer;
+    user-select: none; /* ป้องกันการเลือกข้อความตอนดับเบิลคลิก */
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:active {
+    background-color: #d1e7ff;
 }
